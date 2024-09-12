@@ -1,0 +1,55 @@
+<app-detalle-partida/>
+<app-tablero/>
+<app-modal-fullscreen [mostrar]="mostrarModal()">
+    @switch (estadoAnterior()) {
+        @case ("Esperando_oponente") {
+          <h2 primario>Esperando Oponente</h2>
+          }
+        @case ("GANADOR_O1") {
+          <h2 primario>Gano {{salaService.juador1().nombre}}</h2>
+        }  
+        @case ("GANADOR_O2") {
+          <h2 primario>Gano {{salaService.juador2().nombre}}</h2>
+        }  
+        @case ("CAMPEON_O1") {
+          <h2 primario>Gano {{salaService.juador1().nombre}} todos los encuentros</h2>
+        }  
+        @case ("CAMPEON_O2") {
+          <h2 primario>Gano {{salaService.juador2().nombre}}todos los encuentros</h2>
+        }   
+      @case ("ABANDONADO") {
+        <h2 primario>El Oponente se Retiro</h2>
+      } 
+      }
+      @switch (estadoAnterior()) {
+  
+        @case ("GANADOR_O1") {
+          <button secundario (click)="nuevaPartida()" class="boton">Proxima partida</button>
+        }  
+        @case ("GANADOR_O2") {
+          <button secundario (click)="nuevaPartida()" class="boton">Proxima partida</button>
+        }  
+        @case ("CAMPEON_O1") {
+          <button secundario (click)="nuevaPartida()"class="boton">Nueva Partina</button>
+        }  
+        @case ("CAMPEON_O2") {
+          <button secundario (click)="nuevaPartida()"class="boton">Nueva Partina</button>
+        }  
+        @case ("ABANDONADO") {
+          <a [routerLink]="['/']" secundario class="boton">Volver al Inicio</a>
+        } 
+      }
+        @if(salaService.publica() && this.estadoAnterior() === "Esperando_oponente"){
+            <div pie>
+                <p>Compartir link</p>
+                <button id="boton-copi" (click)="copiarLink()" alt="Copiar link"> ☢
+            </button>
+                @if(linkCopiado()){
+                    <span>✔</span>
+                }
+            </div>
+        }
+        
+    </app-modal-fullscreen>
+  
+

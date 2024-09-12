@@ -1,0 +1,19 @@
+<section class="flex-apart">
+  <div class="jugador-container">
+   <span>
+   @for(vida of vidasP1(); track $index){❤}
+   </span>
+   <span>X</span>
+   <p>{{salaService.juador1().nombre}}</p>
+  </div>
+    <div class="jugador-container">
+     <span>
+     @for(vida of vidasP2(); track $index){❤}
+    </span>
+    <span>O</span>
+    <p>{{salaService.juador2().nombre || "Esperando Oponente"}}</p>
+  </div>
+</section>
+<p>Estado juego {{salaService.estado()}}</p>
+
+

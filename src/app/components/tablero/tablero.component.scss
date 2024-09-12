@@ -1,0 +1,57 @@
+@use "./../../../../public/colores.scss";
+
+$borde: 1px solid colores.$skyBlue;
+
+
+section{
+    display: grid;
+    justify-content: center;
+    grid-template-columns:  1fr 1fr 1fr;
+    margin: 1rem;
+   
+}
+
+button{
+    aspect-ratio: 1;
+    width: 100px;
+    border: unset;
+    background-color: unset;
+    font-size: 200%;
+    &:not(:disabled){
+        cursor: pointer;
+    }
+    &:nth-of-type(2),&:nth-of-type(8){
+        border-left: $borde;
+        border-right: $borde;
+    }
+    &:nth-of-type(4),&:nth-of-type(6){
+        border-top: $borde;
+        border-bottom: $borde;
+    }
+    &:nth-of-type(5){
+        border: $borde;
+       
+    }
+}
+
+.ganador{
+    animation: ganador;
+}
+@keyframes ganador {
+    0%{
+        scale: 1;
+    }
+    25%{
+        scale: 1.25;
+        rotate: 25deg;
+    }
+    50%{
+        scale: 1;
+    }
+    75%{
+        scale: 1.25;
+        rotate: -25deg;
+    }
+}
+
+

@@ -1,0 +1,50 @@
+@use"./../../public/colores.scss";
+
+$border-radius-base: 20px;
+$padding-consola: 16px;
+
+#container{
+    background-color: colores.$primary;
+    max-width: 500px;
+    border-radius: 40px;
+    padding: calc($border-radius-base + $padding-consola);
+}
+
+#pantalla{
+    height: 500px;
+    background-color: rgba(2, 13, 116, 0.322);
+    border-radius: $border-radius-base;
+    outline: 20px solid colores.$secondary;
+    position: relative;
+    padding: 1rem 2rem;
+    overflow: hidden;
+}
+
+p{
+    margin-top: 26px;
+    font-weight: bold;
+}
+
+@media(width <= 600px){
+    body{
+        margin: 0;
+    }
+    #container{
+        max-width: 100%;
+    }
+}
+
+@media(height <= 900px){
+    app-botonera{
+        display: none;
+    }
+    #container{
+        height: 100svh;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+    #pantalla{
+        height: calc(100svh - ($padding-consola * 2) - ($border-radius-base + $padding-consola) *2);
+    }
+ 
+}

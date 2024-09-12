@@ -1,0 +1,63 @@
+@use"../public/colores.scss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Matemasie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Matemasie&family=New+Amsterdam&display=swap');
+
+
+*{
+    font-family: "Matemasie", sans-serif;
+    color: colores.$skyBlue;
+    
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.flex-apart{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.italic{
+    font-style: italic;
+}
+
+input{
+    color: aqua;
+    background-color: black;
+    font-family: "New Amsterdam", sans-serif;
+}
+
+.boton{
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid colores.$skyBlue;
+    font-family: "New Amsterdam", sans-serif;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    min-width: 200px;
+    text-align: center;
+    &:hover{
+        background-color: rgb(2, 37, 151);
+        color: rgb(104, 104, 101);
+    }
+}
+
+@media(width <= 600px){
+    body{
+        margin: 0;
+    }
+}

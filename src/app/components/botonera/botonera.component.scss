@@ -1,0 +1,92 @@
+@use"./../../../../public/colores.scss";
+
+#container{
+    pointer-events: none;
+    justify-content: space-between;
+    padding:  50px 0;
+}
+
+#d-pad-container{
+    $tamano: 100px;
+    $padding:4px;
+    position: relative;
+    border: 2px solid colores.$skyBlue;
+    width: $tamano;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: $padding;
+    >div{
+        $ancho: 20px;
+        position: absolute;
+        width: $ancho;
+        background-color: colores.$secondary;
+        height: $tamano;
+        left: calc($tamano / 2 - $ancho / 2 + $padding);
+        &:last-child{
+            rotate: 90deg;
+        }
+    }
+}
+
+#x-o-container{
+    translate: 0 40px;
+}
+
+#x-o-border-container{
+    border: 1px solid colores.$skyBlue;
+    border-radius: 2rem;
+    padding: 5px;
+    rotate: -45deg;
+    width: 110px;
+}
+
+.boton-redondo{
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: colores.$red;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    span{
+        translate: 0 40px;
+    }
+}
+
+#botones-start-container{
+    margin: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    div{
+        translate: 0 40px;
+        margin: 0;
+    }
+}
+
+.boton-alargado{
+    width: 80px;
+    height: 10px;
+    margin: 10px;
+    rotate: -35deg;
+    border-radius: 2rem;
+    border: 1.5px solid colores.$skyBlue;
+    display: flex;
+    justify-content: center;
+    span{
+        translate: 0 30px;
+        font-size: smaller;
+        font-weight: bold;
+    }
+}
+
+#parlante-container{
+    width: 80px;
+    rotate: 45deg;
+    margin-left: auto;
+    div{
+        aspect-ratio: 9;
+        margin: 8px;
+        border-radius: 2rem;
+        border: 1px solid colores.$skyBlue;
+    }
+}

@@ -1,0 +1,13 @@
+section{
+    width: 100%;
+    margin: auto;
+}
+
+.jugador-container{
+    &:nth-child(1){
+        text-align: start;
+    }
+    &:nth-child(2){
+        text-align: end;
+    }
+}
